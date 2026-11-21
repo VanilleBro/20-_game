@@ -11,8 +11,9 @@ Jeder Push auf `main` baut die App automatisch über GitHub Actions neu und erst
 
 ## 🎮 Regeln
 
-- 10 Essen zur Auswahl (Burger, Pizza, Hot Dog, Tacos, Döner, Sushi, Pancakes, Eisbecher, Sandwich, Pasta), jedes mit 18 möglichen Items.
-- Pro Spiel kommen **5 zufällige Items** (einstellbar). Für jedes wird abwechselnd geboten: **+1 $**, **+2 $** oder **Passen**.
+- 10 Essen zur Auswahl (Burger, Pizza, Hot Dog, Tacos, Döner, Sushi, Pancakes, Eisbecher, Sandwich, Pasta), jedes mit 18 möglichen Zutaten.
+- **Jeder bekommt 4 Zutaten** (einstellbar). Es kommen so lange zufällige Zutaten, bis beide voll sind. Für jede wird abwechselnd geboten: **+1 $**, **+2 $** oder **Passen**.
+- Ist einer schon voll, bekommt der andere die nächsten Zutaten gratis angeboten und kann sie nehmen oder überspringen.
 - Wer passt, lässt den anderen mit seinem Höchstgebot gewinnen. Nur der Gewinner zahlt.
 - Passen beide, ohne dass jemand geboten hat, kriegt keiner das Item.
 - Wer zuerst bietet, wechselt jedes Item ab.
@@ -22,6 +23,11 @@ Jeder Push auf `main` baut die App automatisch über GitHub Actions neu und erst
 ## 🍽️ Table-Mode
 
 In den Einstellungen aktivierbar: Das Handy liegt zwischen euch auf dem Tisch. Die Hälfte von Spieler 2 ist umgedreht, und die Steuerung dreht sich immer zu dem Spieler, der gerade dran ist.
+
+## 🖼️ Bilder
+
+Die Zutaten- und Gerichtsfotos stammen von [TheMealDB](https://www.themealdb.com). Sie werden vom Workflow `.github/workflows/fetch-images.yml` geladen (Liste in `tools/images.json`), zugeschnitten und als WebP unter `app/src/main/assets/img/` gespeichert.
+Auf dem Essen liegen natürliche Zutaten als echtes Foto; Soßen, Käse & Co. werden passend gezeichnet (`app/src/main/assets/scenes.js`).
 
 ## 🛠️ Technik
 

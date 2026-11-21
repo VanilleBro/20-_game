@@ -15,7 +15,7 @@ function load(key, def) {
 }
 function save(key, val) { try { localStorage.setItem("g20_" + key, JSON.stringify(val)); } catch (e) {} }
 
-let settings = load("settings", { names: ["Spieler 1", "Spieler 2"], table: false, rounds: 5, sound: true });
+let settings = load("settings", { names: ["Spieler 1", "Spieler 2"], table: false, perPlayer: 4, sound: true });
 let stats = load("stats", {});
 let G = null;          // aktueller Spielzustand
 let history = [];      // für Rückgängig
@@ -92,9 +92,9 @@ $("#modal").addEventListener("click", (e) => { if (e.target.id === "modal" && !$
    HOME
    ============================================================ */
 function renderHome() {
-  const foods = FOODS.map((f, i) => `
-    <button class="food-card" data-food="${f.id}" style="--glow:hsla(${(i * 37 + 20) % 360},90%,60%,.35)">
-      <span class="fe">${f.emoji}</span><span class="fn">${esc(f.name)}</span>
+  const foods = FOODS.map((f) => `
+    <button class="food-card" data-food="${f.id}">
+      <span class="fpic">${foodPic(f)}</span><span class="fn">${esc(f.name)}</span>
     </button>`).join("");
   const sb = Object.entries(stats).sort((a, b) => b[1] - a[1]).slice(0, 6);
   $("#screen-home").innerHTML = `
@@ -121,8 +121,8 @@ function renderHome() {
         <div class="toggle ${settings.table ? "on" : ""}"></div>
       </div>
       <div class="set-row">
-        <div class="st"><b>🔁 Items pro Spiel</b><small>Standard: 5</small></div>
-        <div class="stepper"><button id="rMinus">−</button><span id="rVal">${settings.rounds}</span><button id="rPlus">+</button></div>
+        <div class="st"><b>🔁 Items pro Person</b><small>Standard: 4</small></div>
+        <div class="stepper"><button id="rMinus">−</button><span id="rVal">${perPlayer()}</span><button id="rPlus">+</button></div>
       </div>
       <div class="set-row" id="soundRow">
         <div class="st"><b>🔊 Sound</b><small>Effekte beim Bieten</small></div>
@@ -132,7 +132,7 @@ function renderHome() {
 
     ${sb.length ? `<div class="scoreboard"><h4>🏆 Siege</h4>${sb.map(([n, w]) => `<div class="sb-row"><span>${esc(n)}</span><b>${w}</b></div>`).join("")}
       <div class="row-btns" style="margin-top:8px"><button class="ghost-btn" id="resetStats" style="padding:10px;font-size:13px">Zurücksetzen</button></div></div>` : ""}
-    <div class="credits">Jeder startet mit $${START_MONEY}. Wer am meisten bietet, kriegt das Item.</div>
+    <div class="credits">Jeder startet mit $${START_MONEY} und bekommt ${perPlayer()} Zutaten.<br>Fotos: TheMealDB</div>
   `;
 
   const saveNames = () => {
@@ -150,8 +150,8 @@ function renderHome() {
   $("#rulesCard").addEventListener("click", showRules);
   $("#tableRow").addEventListener("click", () => { settings.table = !settings.table; save("settings", settings); sfx.tap(); renderHome(); });
   $("#soundRow").addEventListener("click", () => { settings.sound = !settings.sound; save("settings", settings); sfx.tap(); renderHome(); });
-  $("#rMinus").addEventListener("click", () => { settings.rounds = Math.max(1, settings.rounds - 1); save("settings", settings); $("#rVal").textContent = settings.rounds; sfx.tap(); });
-  $("#rPlus").addEventListener("click", () => { settings.rounds = Math.min(18, settings.rounds + 1); save("settings", settings); $("#rVal").textContent = settings.rounds; sfx.tap(); });
+  $("#rMinus").addEventListener("click", () => { settings.perPlayer = Math.max(1, perPlayer() - 1); save("settings", settings); $("#rVal").textContent = settings.perPlayer; sfx.tap(); });
+  $("#rPlus").addEventListener("click", () => { settings.perPlayer = Math.min(8, perPlayer() + 1); save("settings", settings); $("#rVal").textContent = settings.perPlayer; sfx.tap(); });
   const rs = $("#resetStats");
   rs && rs.addEventListener("click", () => {
     openModal(`<h2>Siege zurücksetzen?</h2><div class="mbtns"><button class="mbtn danger" id="yes">Ja, löschen</button><button class="mbtn" id="no">Abbrechen</button></div>`);
@@ -165,10 +165,11 @@ function showRules() {
     <h2>📖 So geht's</h2>
     <ul>
       <li>Ihr wählt ein Essen (z.B. Burger). Jeder hat <b>$${START_MONEY}</b>.</li>
-      <li>Nacheinander kommen <b>${settings.rounds} zufällige Items</b> (von 18). Für jedes wird abwechselnd geboten: <b>+1 $</b>, <b>+2 $</b> oder <b>Passen</b>.</li>
+      <li>Jeder bekommt <b>${perPlayer()} Zutaten</b>. Es kommen so lange zufällige Zutaten (von 18), bis beide voll sind. Für jede wird abwechselnd geboten: <b>+1 $</b>, <b>+2 $</b> oder <b>Passen</b>.</li>
       <li>Wer passt, lässt den anderen mit seinem Höchstgebot gewinnen. Nur der Gewinner zahlt.</li>
       <li>Passen beide, ohne dass jemand geboten hat, kriegt <b>keiner</b> das Item.</li>
       <li>Wer zuerst bietet, wechselt jedes Item.</li>
+      <li>Ist einer schon <b>voll</b>, bekommt der andere die nächsten Zutaten gratis angeboten: <b>nehmen</b> oder <b>überspringen</b>.</li>
       <li>Ist einer <b>pleite</b>, entscheidet der andere bei jedem Item: <b>selbst nehmen</b> oder <b>dem anderen geben</b> (gratis). Sind beide pleite, entscheidet der, der dran gewesen wäre.</li>
       <li>Am Ende einigt ihr euch, wer gewonnen hat. Wenn nicht: <b>die App-Jury entscheidet</b> – jedes Item hat eine geheime Bewertung, gute Kombos geben Bonus, ekliges Zeug gibt Minuspunkte 🤢.</li>
     </ul>
@@ -181,13 +182,17 @@ function showRules() {
 /* ============================================================
    SPIEL-LOGIK
    ============================================================ */
+function perPlayer() { return Math.max(1, Math.min(8, Number(settings.perPlayer) || 4)); }
+function isFull(i) { return G.players[i].items.length >= G.per; }
+function needed(i) { return Math.max(0, G.per - G.players[i].items.length); }
+
 function newGame(foodId) {
   const food = foodById(foodId);
-  const rounds = Math.max(1, Math.min(18, settings.rounds));
   G = {
     foodId,
     players: [0, 1].map((i) => ({ name: settings.names[i] || `Spieler ${i + 1}`, money: START_MONEY, items: [] })),
-    queue: shuffle(food.items.map((it) => it.id)).slice(0, rounds),
+    queue: shuffle(food.items.map((it) => it.id)),
+    per: perPlayer(),
     round: 0,
     firstStarter: Math.random() < 0.5 ? 0 : 1,
     phase: "bid",
@@ -210,7 +215,10 @@ function startRound() {
   const s = roundStarter();
   const m = G.players.map((p) => p.money);
   G.a = { itemId: G.queue[G.round], high: 0, highBy: null, turn: s, passed: [false, false], log: [], winner: null, price: 0 };
-  if (m[0] === 0 || m[1] === 0) {
+  if (isFull(0) || isFull(1)) {
+    G.phase = "fill";
+    G.a.turn = isFull(0) ? 1 : 0;
+  } else if (m[0] === 0 || m[1] === 0) {
     G.phase = "decide";
     // Wer noch Geld hat, entscheidet. Sind beide pleite, entscheidet der Startspieler dieser Runde.
     G.a.turn = (m[0] === 0 && m[1] === 0) ? s : (m[0] === 0 ? 1 : 0);
@@ -246,6 +254,15 @@ function doPass() {
   renderGame();
 }
 
+function doFill(take) {
+  if (G.phase !== "fill") return;
+  const p = G.a.turn;
+  if (!take && G.queue.length - G.round <= needed(p)) return;
+  snapshot();
+  sfx.tap(); buzz(20);
+  award(take ? p : null, 0);
+}
+
 function doDecide(take) {
   if (G.phase !== "decide") return;
   snapshot();
@@ -272,7 +289,7 @@ function nextRound() {
   if (!G || G.phase !== "result") return;
   snapshot();
   G.round++;
-  if (G.round >= G.queue.length) { G.phase = "end"; renderEnd(); return; }
+  if ((isFull(0) && isFull(1)) || G.round >= G.queue.length) { G.phase = "end"; renderEnd(); return; }
   startRound();
   renderGame();
 }
@@ -291,29 +308,16 @@ function undo() {
 }
 
 /* ============================================================
-   BUILD-ANSICHT (Burger / Teller)
+   BILDER
    ============================================================ */
-function buildHTML(food, itemIds, { size = "sm", newItem = null } = {}) {
-  const items = itemIds.map((id) => itemOf(food, id));
-  if (food.style === "stack") {
-    const top = food.top && food.top !== "none" ? `<div class="piece ${food.top}-top"></div>` : "";
-    const bottom = `<div class="piece ${food.bottom}-bottom"></div>`;
-    const layers = items.slice().reverse().map((it) => `
-      <div class="layer ${it.id === newItem ? "pop" : ""}" style="background:${it.color};color:${textOn(it.color)}">
-        <span class="e">${it.emoji}</span><span class="n">${esc(it.name)}</span>
-      </div>`).join("");
-    return `<div class="stack ${size}">${top}${layers || `<div class="empty-note">noch leer</div>`}${bottom}</div>`;
-  }
-  // Teller
-  const n = items.length;
-  const s = n <= 4 ? 2.1 : n <= 7 ? 1.8 : n <= 10 ? 1.45 : 1.1;
-  const r = 34;
-  const pieces = items.map((it, i) => {
-    const ang = (-90 + (i * 360) / Math.max(n, 1)) * Math.PI / 180;
-    const x = 50 + r * Math.cos(ang), y = 50 + r * Math.sin(ang);
-    return `<div class="pitem" style="left:${x}%;top:${y}%;--s:${s}em"><span class="pe ${it.id === newItem ? "pop" : ""}">${it.emoji}</span></div>`;
-  }).join("");
-  return `<div class="plate ${n ? "" : "empty"}"><div class="plate-base">${food.emoji}</div>${pieces}</div>`;
+const MEAL_PHOTOS = { burger: 1, pizza: 1, tacos: 1, sushi: 1, pancakes: 1, eis: 1, sandwich: 1, pasta: 1 };
+const SAMPLE = { hotdog: [0, 1, 2, 13], doener: [0, 11, 7, 2] };
+function foodPic(f) {
+  if (MEAL_PHOTOS[f.id]) return `<img src="img/meal/${f.id}.webp" alt="" onerror="this.outerHTML='<span class=&quot;fe&quot;>${f.emoji}</span>'">`;
+  return renderScene(f, SAMPLE[f.id] || [], { per: 4 });
+}
+function sceneHTML(food, itemIds, opts = {}) {
+  return renderScene(food, itemIds, Object.assign({ per: G ? G.per : 4 }, opts));
 }
 
 /* ============================================================
@@ -322,18 +326,19 @@ function buildHTML(food, itemIds, { size = "sm", newItem = null } = {}) {
 function renderPlayer(i) {
   const food = foodById(G.foodId), p = G.players[i];
   const el = $("#pa" + i);
-  const isTurn = (G.phase === "bid" || G.phase === "decide") && G.a.turn === i;
+  const isTurn = (G.phase === "bid" || G.phase === "decide" || G.phase === "fill") && G.a.turn === i;
   const newItem = (G.phase === "result" && G.a.winner === i && lastRenderedAward !== G.round + ":" + i) ? G.a.itemId : null;
   el.classList.toggle("active", isTurn);
-  el.classList.toggle("dim", (G.phase === "bid" || G.phase === "decide") && !isTurn);
+  el.classList.toggle("dim", (G.phase === "bid" || G.phase === "decide" || G.phase === "fill") && !isTurn);
   const spent = prevMoney[i] !== p.money;
   el.innerHTML = `
     <div class="pa-head">
       <div class="pa-name"><span class="dot"></span><span class="nm">${esc(p.name)}</span></div>
       <div class="pa-money ${spent ? "spent" : ""} ${p.money === 0 ? "broke" : ""}">$${p.money}</div>
     </div>
-    <div class="pa-sub">${p.items.length} ${p.items.length === 1 ? "Item" : "Items"}${p.money === 0 ? " · pleite 💸" : ""}</div>
-    <div class="pa-build">${buildHTML(food, p.items, { newItem })}</div>`;
+    <div class="slots">${Array.from({ length: G.per }, (_, k) => p.items[k] !== undefined ? `<span class="slot full">${itemPic(itemOf(food, p.items[k]))}</span>` : `<span class="slot"></span>`).join("")}
+      <span class="pa-sub">${p.items.length}/${G.per}${p.money === 0 ? " · pleite 💸" : ""}</span></div>
+    <div class="pa-build">${sceneHTML(food, p.items, { newItem })}</div>`;
   if (newItem !== null) lastRenderedAward = G.round + ":" + i;
   prevMoney[i] = p.money;
 }
@@ -348,16 +353,15 @@ function renderGame() {
   $("#center").classList.toggle("flip", flip);
   $("#screen-game").classList.toggle("table", !!settings.table);
 
-  const pips = G.queue.map((_, i) => `<span class="pip ${i < G.round ? "done" : i === G.round ? "now" : ""}"></span>`).join("");
   const head = `
     <div class="c-head">
-      <span>${food.emoji} ${esc(food.name)}</span>
-      <span class="rnd">${G.round + 1}/${G.queue.length}</span>
+      <span>${esc(food.name)}</span>
+      <span class="rnd">Zutat ${G.round + 1}</span>
       <span class="grow"></span>
       <button class="icon-btn" id="undoBtn" ${history.length ? "" : "disabled"}>↶</button>
       <button class="icon-btn" id="menuBtn">⋮</button>
     </div>
-    <div class="pips" style="margin:6px 2px 0">${pips}</div>`;
+    `;
 
   let body = "";
   if (G.phase === "bid") {
@@ -371,9 +375,8 @@ function renderGame() {
     else if (a.passed[o]) passHint = "keiner kriegt's";
     body = `
       <div class="item-card">
-        <div class="item-emoji" ${a.log.length ? 'style="animation:none"' : ""}>${it.emoji}</div>
+        <div class="item-emoji" ${a.log.length ? 'style="animation:none"' : ""}>${itemPic(it)}</div>
         <div class="item-info">
-          <div class="item-label">Zu ersteigern</div>
           <div class="item-name">${esc(it.name)}</div>
           <div class="bid-line">${bidTxt}</div>
         </div>
@@ -392,7 +395,7 @@ function renderGame() {
     const both = G.players[0].money === 0 && G.players[1].money === 0;
     body = `
       <div class="item-card">
-        <div class="item-emoji">${it.emoji}</div>
+        <div class="item-emoji">${itemPic(it)}</div>
         <div class="item-info">
           <div class="item-label">${both ? "Beide pleite 💸" : `${esc(name(o))} ist pleite 💸`}</div>
           <div class="item-name">${esc(it.name)}</div>
@@ -404,17 +407,34 @@ function renderGame() {
         <button class="bbtn take" id="dTake">Ich nehm's<small>😋 auf meins</small></button>
         <button class="bbtn give" id="dGive">${esc(name(o))} kriegt's<small>😈 ab zum Gegner</small></button>
       </div>`;
+  } else if (G.phase === "fill") {
+    const left = G.queue.length - G.round, need = needed(t), must = left <= need;
+    body = `
+      <div class="item-card">
+        <div class="item-emoji">${itemPic(it)}</div>
+        <div class="item-info">
+          <div class="item-label">${esc(name(o))} ist voll ✅</div>
+          <div class="item-name">${esc(it.name)}</div>
+          <div class="bid-line">Gratis für dich – noch ${need} ${need === 1 ? "Zutat" : "Zutaten"} frei.</div>
+        </div>
+      </div>
+      <div class="turn" style="--tc:${pColor(t)}">${settings.table ? "👉" : "📱"} ${esc(name(t))} entscheidet
+        <small>${must ? "Nicht mehr genug Zutaten übrig – du musst nehmen" : `Noch ${left} im Topf`}</small></div>
+      <div class="btns two">
+        <button class="bbtn take" id="fTake">Nehmen<small>😋 aufs Essen</small></button>
+        <button class="bbtn pass" id="fSkip" ${must ? "disabled" : ""}>Überspringen<small>nächste Zutat</small></button>
+      </div>`;
   } else if (G.phase === "result") {
     const w = a.winner;
     body = w === null ? `
       <div class="result none" id="resTap">
-        <div class="big-emoji">${it.emoji}</div>
+        <div class="big-emoji">${itemPic(it)}</div>
         <h3>Keiner will ${esc(it.name)} 🙅</h3>
-        <p>Das Item fliegt raus.</p>
+        <p>Die Zutat fliegt raus.</p>
         <div class="tap">Tippen zum Weiterspielen</div>
       </div>` : `
       <div class="result" id="resTap">
-        <div class="big-emoji">${it.emoji}</div>
+        <div class="big-emoji">${itemPic(it)}</div>
         <h3><span style="color:${pColor(w)}">${esc(name(w))}</span> kriegt ${esc(it.name)}!</h3>
         <p>${a.price > 0 ? `für <b style="color:var(--gold)">$${a.price}</b> · noch $${G.players[w].money} übrig` : "gratis 🎁"}</p>
         <div class="tap">Tippen zum Weiterspielen</div>
@@ -427,6 +447,7 @@ function renderGame() {
   const on = (id, fn) => { const e = $("#" + id); e && (e.onclick = fn); };
   on("b1", () => doBid(1)); on("b2", () => doBid(2)); on("bp", doPass);
   on("dTake", () => doDecide(true)); on("dGive", () => doDecide(false));
+  on("fTake", () => doFill(true)); on("fSkip", () => doFill(false));
   on("resTap", nextRound);
 }
 
@@ -480,13 +501,13 @@ function renderEnd() {
   scr.classList.toggle("table", !!settings.table);
   const ep = (i) => {
     const p = G.players[i];
-    const chips = p.items.map((id) => { const it = itemOf(food, id); return `<span class="chip">${it.emoji} ${esc(it.name)}</span>`; }).join("") || `<span class="chip">nichts 😶</span>`;
+    const chips = p.items.map((id) => { const it = itemOf(food, id); return `<span class="chip">${itemPic(it)} ${esc(it.name)}</span>`; }).join("") || `<span class="chip">nichts 😶</span>`;
     return `<div class="ep" id="ep${i}">
       <div class="pa-head">
-        <div class="pa-name"><span class="dot"></span><span class="nm">${esc(p.name)} ${food.emoji}</span></div>
+        <div class="pa-name"><span class="dot"></span><span class="nm">${esc(p.name)}</span></div>
         <div class="pa-money">$${p.money}</div>
       </div>
-      <div class="pa-build">${buildHTML(food, p.items, { size: "lg" })}</div>
+      <div class="pa-build">${sceneHTML(food, p.items, { size: "lg" })}</div>
       <div class="chips">${chips}</div>
     </div>`;
   };
@@ -516,7 +537,7 @@ function renderEnd() {
 function scoreFor(i) {
   const food = foodById(G.foodId), p = G.players[i];
   const names = new Set(p.items.map((id) => itemOf(food, id).name));
-  const rows = p.items.map((id) => { const it = itemOf(food, id); return { label: `${it.emoji} ${it.name}`, v: it.score, cls: it.score >= 0 ? "pos" : "neg" }; });
+  const rows = p.items.map((id) => { const it = itemOf(food, id); return { label: it.name, pic: itemPic(it, "xs"), v: it.score, cls: it.score >= 0 ? "pos" : "neg" }; });
   for (const [need, bonus, label] of food.combos) {
     if (need.every((n) => names.has(n))) rows.push({ label: `✨ ${label}`, v: bonus, cls: "combo" });
   }
@@ -531,7 +552,7 @@ function judge() {
   sfx.drum(); buzz(40);
   openModal(`
     <div class="judging">
-      <div class="plates"><span>${foodById(G.foodId).emoji}</span><span>🧑‍🍳</span><span>${foodById(G.foodId).emoji}</span></div>
+      <div class="plates"><span class="jp">${sceneHTML(foodById(G.foodId), G.players[0].items)}</span><span>🧑‍🍳</span><span class="jp">${sceneHTML(foodById(G.foodId), G.players[1].items)}</span></div>
       <p>Die Jury probiert …</p>
       <div class="item-label">Geschmack · Kombos · Ekel-Faktor</div>
     </div>`, { locked: true });
@@ -553,7 +574,7 @@ function declareWinner(w, byJury, scores = null, tie = false) {
   const bd = scores ? `<div class="breakdown">${[0, 1].map((i) => `
       <div class="bd ${i === w ? "win" : ""}">
         <h4 style="color:${pColor(i)}">${esc(name(i))}</h4>
-        ${scores[i].rows.map((r) => `<div class="bd-row"><span>${esc(r.label)}</span><span class="${r.cls}">${fmt(r.v)}</span></div>`).join("")}
+        ${scores[i].rows.map((r) => `<div class="bd-row"><span>${r.pic || ""}${esc(r.label)}</span><span class="${r.cls}">${fmt(r.v)}</span></div>`).join("")}
         <div class="bd-total"><span>Gesamt</span><span>${fmt(scores[i].total)}</span></div>
       </div>`).join("")}</div>` : "";
   const sub = byJury ? (tie ? "Gleichstand! Die Münze hat entschieden 🪙" : "Die App-Jury hat entschieden 🧑‍🍳") : "Einstimmig entschieden 🤝";
@@ -565,7 +586,7 @@ function declareWinner(w, byJury, scores = null, tie = false) {
     </div>
     ${bd}
     <div class="mbtns">
-      <button class="mbtn primary" id="again">🔁 Nochmal ${food.emoji} ${esc(food.name)}</button>
+      <button class="mbtn primary" id="again">🔁 Nochmal ${esc(food.name)}</button>
       <button class="mbtn" id="other">🍽️ Anderes Essen</button>
     </div>`, { locked: true });
   $("#again").onclick = () => { closeModal(); newGame(food.id); };
