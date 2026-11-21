@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>20$ Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <section id="screen-home" class="screen active"></section>
+  <section id="screen-game" class="screen">
+    <div class="pa" id="pa1"></div>
+    <div class="center" id="center"><div class="center-inner" id="centerInner"></div></div>
+    <div class="pa" id="pa0"></div>
+  </section>
+  <section id="screen-end" class="screen"></section>
+
+  <div id="modal" class="modal hidden"><div class="modal-card" id="modalCard"></div></div>
+  <div id="toast" class="toast hidden"></div>
+  <div id="confetti"></div>
+
+  <script src="data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
