@@ -1,0 +1,1452 @@
+{
+ "ingredients": {
+  "patty": {
+   "ok": true,
+   "name": "Minced Beef",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/minced_beef.png",
+   "size": [
+    320,
+    275
+   ]
+  },
+  "cheddar": {
+   "ok": true,
+   "name": "Cheddar Cheese",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/cheddar_cheese.png",
+   "size": [
+    221,
+    320
+   ]
+  },
+  "cheese": {
+   "ok": true,
+   "name": "Cheese",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/cheese.png",
+   "size": [
+    320,
+    189
+   ]
+  },
+  "lettuce": {
+   "ok": true,
+   "name": "Lettuce",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/lettuce.png",
+   "size": [
+    320,
+    255
+   ]
+  },
+  "tomato": {
+   "ok": true,
+   "name": "Tomato",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/tomato.png",
+   "size": [
+    320,
+    306
+   ]
+  },
+  "bacon": {
+   "ok": true,
+   "name": "Bacon",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/bacon.png",
+   "size": [
+    320,
+    255
+   ]
+  },
+  "pancetta": {
+   "ok": true,
+   "name": "Bacon",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/bacon.png",
+   "size": [
+    320,
+    255
+   ]
+  },
+  "onion": {
+   "ok": true,
+   "name": "Onion",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/onion.png",
+   "size": [
+    315,
+    320
+   ]
+  },
+  "red_onion": {
+   "ok": true,
+   "name": "Red Onions",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/red_onions.png",
+   "size": [
+    320,
+    319
+   ]
+  },
+  "fried_onions": {
+   "ok": true,
+   "name": "Shallots",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/shallots.png",
+   "size": [
+    320,
+    277
+   ]
+  },
+  "pickles": {
+   "ok": true,
+   "name": "Dill Pickles",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/dill_pickles.png",
+   "size": [
+    171,
+    320
+   ]
+  },
+  "egg": {
+   "ok": true,
+   "name": "Egg",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/egg.png",
+   "size": [
+    227,
+    320
+   ]
+  },
+  "jalapeno": {
+   "ok": true,
+   "name": "Jalapeno",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/jalapeno.png",
+   "size": [
+    320,
+    233
+   ]
+  },
+  "avocado": {
+   "ok": true,
+   "name": "Avocado",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/avocado.png",
+   "size": [
+    320,
+    306
+   ]
+  },
+  "bbq": {
+   "ok": true,
+   "name": "Barbeque Sauce",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/barbeque_sauce.png",
+   "size": [
+    124,
+    320
+   ]
+  },
+  "ketchup": {
+   "ok": true,
+   "name": "Tomato Ketchup",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/tomato_ketchup.png",
+   "size": [
+    95,
+    320
+   ]
+  },
+  "mushrooms": {
+   "ok": true,
+   "name": "Mushrooms",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/mushrooms.png",
+   "size": [
+    311,
+    320
+   ]
+  },
+  "pineapple": {
+   "ok": true,
+   "name": "Pineapple",
+   "official": false,
+   "url": "https://www.themealdb.com/images/ingredients/Pineapple.png",
+   "size": [
+    163,
+    320
+   ]
+  },
+  "peanut_butter": {
+   "ok": true,
+   "name": "Peanut Butter",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/peanut_butter.png",
+   "size": [
+    205,
+    320
+   ]
+  },
+  "gummy": {
+   "ok": false,
+   "tried": [
+    "Gummy Bears",
+    "Jelly Babies",
+    "Jelly Beans",
+    "Haribo",
+    "Sweets"
+   ]
+  },
+  "chocolate": {
+   "ok": true,
+   "name": "Milk Chocolate",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/milk_chocolate.png",
+   "size": [
+    320,
+    125
+   ]
+  },
+  "mayo": {
+   "ok": true,
+   "name": "Mayonnaise",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/mayonnaise.png",
+   "size": [
+    207,
+    320
+   ]
+  },
+  "garlic": {
+   "ok": true,
+   "name": "Garlic",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/garlic.png",
+   "size": [
+    320,
+    221
+   ]
+  },
+  "mozzarella": {
+   "ok": true,
+   "name": "Mozzarella",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/mozzarella.png",
+   "size": [
+    320,
+    294
+   ]
+  },
+  "tomato_sauce": {
+   "ok": true,
+   "name": "Passata",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/passata.png",
+   "size": [
+    111,
+    320
+   ]
+  },
+  "salami": {
+   "ok": true,
+   "name": "Chorizo",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/chorizo.png",
+   "size": [
+    320,
+    228
+   ]
+  },
+  "ham": {
+   "ok": true,
+   "name": "Ham",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/ham.png",
+   "size": [
+    320,
+    178
+   ]
+  },
+  "bell_pepper": {
+   "ok": true,
+   "name": "Red Pepper",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/red_pepper.png",
+   "size": [
+    320,
+    240
+   ]
+  },
+  "olives": {
+   "ok": true,
+   "name": "Black Olives",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/black_olives.png",
+   "size": [
+    181,
+    320
+   ]
+  },
+  "basil": {
+   "ok": true,
+   "name": "Basil",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/basil.png",
+   "size": [
+    320,
+    215
+   ]
+  },
+  "chili": {
+   "ok": true,
+   "name": "Red Chilli",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/red_chilli.png",
+   "size": [
+    320,
+    284
+   ]
+  },
+  "corn": {
+   "ok": true,
+   "name": "Sweetcorn",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/sweetcorn.png",
+   "size": [
+    253,
+    320
+   ]
+  },
+  "tuna": {
+   "ok": true,
+   "name": "Tuna",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/tuna.png",
+   "size": [
+    320,
+    129
+   ]
+  },
+  "tuna_steak": {
+   "ok": true,
+   "name": "Tuna",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/tuna.png",
+   "size": [
+    320,
+    129
+   ]
+  },
+  "rocket": {
+   "ok": true,
+   "name": "Rocket",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/rocket.png",
+   "size": [
+    320,
+    187
+   ]
+  },
+  "banana": {
+   "ok": true,
+   "name": "Banana",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/banana.png",
+   "size": [
+    320,
+    215
+   ]
+  },
+  "sausage": {
+   "ok": true,
+   "name": "Sausages",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/sausages.png",
+   "size": [
+    320,
+    247
+   ]
+  },
+  "mustard": {
+   "ok": true,
+   "name": "Mustard",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/mustard.png",
+   "size": [
+    187,
+    320
+   ]
+  },
+  "relish": {
+   "ok": true,
+   "name": "Gherkin Relish",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/gherkin_relish.png",
+   "size": [
+    210,
+    320
+   ]
+  },
+  "sauerkraut": {
+   "ok": true,
+   "name": "Sauerkraut",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/sauerkraut.png",
+   "size": [
+    218,
+    320
+   ]
+  },
+  "kidney_beans": {
+   "ok": true,
+   "name": "Kidney Beans",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/kidney_beans.png",
+   "size": [
+    225,
+    320
+   ]
+  },
+  "black_beans": {
+   "ok": true,
+   "name": "Black Beans",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/black_beans.png",
+   "size": [
+    268,
+    320
+   ]
+  },
+  "cabbage": {
+   "ok": true,
+   "name": "White Cabbage",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/White_Cabbage.png",
+   "size": [
+    320,
+    207
+   ]
+  },
+  "red_cabbage": {
+   "ok": true,
+   "name": "Red Cabbage",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/Red_Cabbage.png",
+   "size": [
+    320,
+    320
+   ]
+  },
+  "curry": {
+   "ok": true,
+   "name": "Curry Powder",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/curry_powder.png",
+   "size": [
+    135,
+    320
+   ]
+  },
+  "popcorn": {
+   "ok": true,
+   "name": "Toffee Popcorn",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/toffee_popcorn.png",
+   "size": [
+    217,
+    320
+   ]
+  },
+  "marshmallows": {
+   "ok": true,
+   "name": "Miniature Marshmallows",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/miniature_marshmallows.png",
+   "size": [
+    320,
+    186
+   ]
+  },
+  "jam": {
+   "ok": true,
+   "name": "Raspberry Jam",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/raspberry_jam.png",
+   "size": [
+    198,
+    320
+   ]
+  },
+  "sprinkles": {
+   "ok": false,
+   "tried": [
+    "Sprinkles",
+    "Hundreds and Thousands",
+    "Hundreds-and-thousands"
+   ]
+  },
+  "mince": {
+   "ok": true,
+   "name": "Minced Beef",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/minced_beef.png",
+   "size": [
+    320,
+    275
+   ]
+  },
+  "chicken": {
+   "ok": true,
+   "name": "Chicken",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/chicken.png",
+   "size": [
+    320,
+    274
+   ]
+  },
+  "salsa": {
+   "ok": true,
+   "name": "Salsa",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/salsa.png",
+   "size": [
+    171,
+    320
+   ]
+  },
+  "sour_cream": {
+   "ok": true,
+   "name": "Sour Cream",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/sour_cream.png",
+   "size": [
+    320,
+    255
+   ]
+  },
+  "coriander": {
+   "ok": true,
+   "name": "Coriander",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/coriander.png",
+   "size": [
+    320,
+    253
+   ]
+  },
+  "lime": {
+   "ok": true,
+   "name": "Lime",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/lime.png",
+   "size": [
+    315,
+    320
+   ]
+  },
+  "rice": {
+   "ok": true,
+   "name": "Rice",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/rice.png",
+   "size": [
+    219,
+    320
+   ]
+  },
+  "sushi_rice": {
+   "ok": true,
+   "name": "Sushi Rice",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/sushi_rice.png",
+   "size": [
+    229,
+    320
+   ]
+  },
+  "fish_fingers": {
+   "ok": true,
+   "name": "White Fish",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/white_fish.png",
+   "size": [
+    320,
+    249
+   ]
+  },
+  "choc_chips": {
+   "ok": true,
+   "name": "Chocolate Chips",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/chocolate_chips.png",
+   "size": [
+    168,
+    320
+   ]
+  },
+  "doner": {
+   "ok": true,
+   "name": "Doner Meat",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/doner_meat.png",
+   "size": [
+    160,
+    320
+   ]
+  },
+  "yogurt": {
+   "ok": true,
+   "name": "Greek Yogurt",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/greek_yogurt.png",
+   "size": [
+    259,
+    320
+   ]
+  },
+  "garlic_sauce": {
+   "ok": true,
+   "name": "Garlic Sauce",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/garlic_sauce.png",
+   "size": [
+    89,
+    320
+   ]
+  },
+  "mint": {
+   "ok": true,
+   "name": "Mint",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/mint.png",
+   "size": [
+    264,
+    320
+   ]
+  },
+  "parsley": {
+   "ok": true,
+   "name": "Parsley",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/parsley.png",
+   "size": [
+    320,
+    312
+   ]
+  },
+  "hot_sauce": {
+   "ok": true,
+   "name": "Hotsauce",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/hotsauce.png",
+   "size": [
+    85,
+    320
+   ]
+  },
+  "cucumber": {
+   "ok": true,
+   "name": "Cucumber",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/cucumber.png",
+   "size": [
+    320,
+    239
+   ]
+  },
+  "feta": {
+   "ok": true,
+   "name": "Feta",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/feta.png",
+   "size": [
+    261,
+    320
+   ]
+  },
+  "fries": {
+   "ok": true,
+   "name": "Fries",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/fries.png",
+   "size": [
+    320,
+    190
+   ]
+  },
+  "green_chili": {
+   "ok": true,
+   "name": "Green Chilli",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/green_chilli.png",
+   "size": [
+    320,
+    219
+   ]
+  },
+  "chocolate_spread": {
+   "ok": true,
+   "name": "Nutella",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/Nutella.png",
+   "size": [
+    245,
+    320
+   ]
+  },
+  "salmon": {
+   "ok": true,
+   "name": "Salmon",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/salmon.png",
+   "size": [
+    320,
+    160
+   ]
+  },
+  "smoked_salmon": {
+   "ok": true,
+   "name": "Smoked Salmon",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/smoked_salmon.png",
+   "size": [
+    320,
+    145
+   ]
+  },
+  "prawns": {
+   "ok": true,
+   "name": "Prawns",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/prawns.png",
+   "size": [
+    320,
+    233
+   ]
+  },
+  "cream_cheese": {
+   "ok": true,
+   "name": "Cream Cheese",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/cream_cheese.png",
+   "size": [
+    320,
+    257
+   ]
+  },
+  "sesame": {
+   "ok": true,
+   "name": "Sesame Seed",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/sesame_seed.png",
+   "size": [
+    225,
+    320
+   ]
+  },
+  "wasabi": {
+   "ok": false,
+   "tried": [
+    "Wasabi",
+    "Wasabi Paste"
+   ]
+  },
+  "ginger": {
+   "ok": true,
+   "name": "Ginger",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/ginger.png",
+   "size": [
+    320,
+    196
+   ]
+  },
+  "soy": {
+   "ok": true,
+   "name": "Soy Sauce",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/soy_sauce.png",
+   "size": [
+    81,
+    320
+   ]
+  },
+  "roe": {
+   "ok": false,
+   "tried": [
+    "Fish Roe",
+    "Salmon Roe",
+    "Caviar"
+   ]
+  },
+  "crab": {
+   "ok": false,
+   "tried": [
+    "Crab",
+    "Crab Meat",
+    "Crab Sticks"
+   ]
+  },
+  "squid": {
+   "ok": true,
+   "name": "Squid",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/squid.png",
+   "size": [
+    320,
+    236
+   ]
+  },
+  "eel": {
+   "ok": false,
+   "tried": [
+    "Eel",
+    "Smoked Eel"
+   ]
+  },
+  "mango": {
+   "ok": true,
+   "name": "Mango",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/Mango.png",
+   "size": [
+    320,
+    274
+   ]
+  },
+  "spring_onion": {
+   "ok": true,
+   "name": "Spring Onions",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/spring_onions.png",
+   "size": [
+    320,
+    92
+   ]
+  },
+  "nori": {
+   "ok": false,
+   "tried": [
+    "Nori",
+    "Nori Seaweed",
+    "Seaweed"
+   ]
+  },
+  "maple": {
+   "ok": true,
+   "name": "Maple Syrup",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/maple_syrup.png",
+   "size": [
+    162,
+    320
+   ]
+  },
+  "butter": {
+   "ok": true,
+   "name": "Butter",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/butter.png",
+   "size": [
+    320,
+    185
+   ]
+  },
+  "blueberries": {
+   "ok": true,
+   "name": "Blueberries",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/blueberries.png",
+   "size": [
+    320,
+    187
+   ]
+  },
+  "strawberries": {
+   "ok": true,
+   "name": "Strawberries",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/strawberries.png",
+   "size": [
+    320,
+    300
+   ]
+  },
+  "raspberries": {
+   "ok": true,
+   "name": "Raspberries",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/raspberries.png",
+   "size": [
+    320,
+    261
+   ]
+  },
+  "whipped_cream": {
+   "ok": true,
+   "name": "Whipped Cream",
+   "official": false,
+   "url": "https://www.themealdb.com/images/ingredients/Whipped%20Cream.png",
+   "size": [
+    94,
+    320
+   ]
+  },
+  "icing_sugar": {
+   "ok": true,
+   "name": "Icing Sugar",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/icing_sugar.png",
+   "size": [
+    169,
+    320
+   ]
+  },
+  "honey": {
+   "ok": true,
+   "name": "Honey",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/honey.png",
+   "size": [
+    257,
+    320
+   ]
+  },
+  "cinnamon": {
+   "ok": true,
+   "name": "Cinnamon",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/cinnamon.png",
+   "size": [
+    320,
+    287
+   ]
+  },
+  "nuts": {
+   "ok": true,
+   "name": "Pecan Nuts",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/pecan_nuts.png",
+   "size": [
+    224,
+    320
+   ]
+  },
+  "coconut": {
+   "ok": true,
+   "name": "Desiccated Coconut",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/desiccated_coconut.png",
+   "size": [
+    198,
+    320
+   ]
+  },
+  "kiwi": {
+   "ok": true,
+   "name": "Kiwi",
+   "official": false,
+   "url": "https://www.themealdb.com/images/ingredients/Kiwi.png",
+   "size": [
+    320,
+    270
+   ]
+  },
+  "ice_cream": {
+   "ok": true,
+   "name": "Ice Cream",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/ice_cream.png",
+   "size": [
+    320,
+    244
+   ]
+  },
+  "choc_sauce": {
+   "ok": true,
+   "name": "Dark Chocolate",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/dark_chocolate.png",
+   "size": [
+    133,
+    320
+   ]
+  },
+  "caramel": {
+   "ok": true,
+   "name": "Caramel",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/caramel.png",
+   "size": [
+    320,
+    228
+   ]
+  },
+  "cherry": {
+   "ok": true,
+   "name": "Cherry",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/cherry.png",
+   "size": [
+    209,
+    320
+   ]
+  },
+  "wafer": {
+   "ok": false,
+   "tried": [
+    "Wafer",
+    "Wafers",
+    "Ice Cream Wafers",
+    "Waffles"
+   ]
+  },
+  "cookie": {
+   "ok": true,
+   "name": "Digestive Biscuits",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/digestive_biscuits.png",
+   "size": [
+    320,
+    163
+   ]
+  },
+  "turkey": {
+   "ok": true,
+   "name": "Turkey",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/Turkey.png",
+   "size": [
+    320,
+    235
+   ]
+  },
+  "pesto": {
+   "ok": false,
+   "tried": [
+    "Pesto",
+    "Green Pesto",
+    "Basil Pesto"
+   ]
+  },
+  "beetroot": {
+   "ok": true,
+   "name": "Beetroot",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/beetroot.png",
+   "size": [
+    320,
+    262
+   ]
+  },
+  "parmesan": {
+   "ok": true,
+   "name": "Parmesan",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/parmesan.png",
+   "size": [
+    171,
+    320
+   ]
+  },
+  "cream": {
+   "ok": true,
+   "name": "Double Cream",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/double_cream.png",
+   "size": [
+    190,
+    320
+   ]
+  },
+  "spinach": {
+   "ok": true,
+   "name": "Spinach",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/spinach.png",
+   "size": [
+    320,
+    284
+   ]
+  },
+  "olive_oil": {
+   "ok": true,
+   "name": "Olive Oil",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/olive_oil.png",
+   "size": [
+    104,
+    320
+   ]
+  },
+  "broccoli": {
+   "ok": true,
+   "name": "Broccoli",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/broccoli.png",
+   "size": [
+    320,
+    306
+   ]
+  },
+  "strawberry_yogurt": {
+   "ok": true,
+   "name": "Yogurt",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/yogurt.png",
+   "size": [
+    225,
+    320
+   ]
+  },
+  "custard": {
+   "ok": true,
+   "name": "Custard",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/custard.png",
+   "size": [
+    267,
+    320
+   ]
+  },
+  "sardines": {
+   "ok": true,
+   "name": "Sardines",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/sardines.png",
+   "size": [
+    320,
+    72
+   ]
+  },
+  "anchovies": {
+   "ok": true,
+   "name": "Anchovy Fillet",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/anchovy_fillet.png",
+   "size": [
+    164,
+    320
+   ]
+  },
+  "marmite": {
+   "ok": false,
+   "tried": [
+    "Marmite"
+   ]
+  },
+  "brussels": {
+   "ok": true,
+   "name": "Brussels Sprouts",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/brussels_sprouts.png",
+   "size": [
+    320,
+    203
+   ]
+  },
+  "liquorice": {
+   "ok": false,
+   "tried": [
+    "Liquorice"
+   ]
+  },
+  "toffee": {
+   "ok": false,
+   "tried": [
+    "Toffee",
+    "Toffee Sauce"
+   ]
+  },
+  "mars": {
+   "ok": true,
+   "name": "Mars Bar",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/mars_bar.png",
+   "size": [
+    320,
+    120
+   ]
+  },
+  "jelly": {
+   "ok": false,
+   "tried": [
+    "Jelly",
+    "Raspberry Jelly"
+   ]
+  },
+  "pretzels": {
+   "ok": true,
+   "name": "Pretzels",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/pretzels.png",
+   "size": [
+    205,
+    320
+   ]
+  },
+  "oreo": {
+   "ok": false,
+   "tried": [
+    "Oreo",
+    "Oreos"
+   ]
+  },
+  "lemon": {
+   "ok": true,
+   "name": "Lemon",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/lemon.png",
+   "size": [
+    320,
+    259
+   ]
+  },
+  "zucchini": {
+   "ok": true,
+   "name": "Zucchini",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/zucchini.png",
+   "size": [
+    320,
+    194
+   ]
+  },
+  "aubergine": {
+   "ok": true,
+   "name": "Aubergine",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/aubergine.png",
+   "size": [
+    320,
+    264
+   ]
+  },
+  "chickpeas": {
+   "ok": true,
+   "name": "Chickpeas",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/chickpeas.png",
+   "size": [
+    206,
+    320
+   ]
+  },
+  "halloumi": {
+   "ok": false,
+   "tried": [
+    "Halloumi"
+   ]
+  },
+  "carrots": {
+   "ok": true,
+   "name": "Carrots",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/carrots.png",
+   "size": [
+    320,
+    185
+   ]
+  },
+  "peas": {
+   "ok": true,
+   "name": "Peas",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/peas.png",
+   "size": [
+    320,
+    164
+   ]
+  },
+  "potatoes": {
+   "ok": true,
+   "name": "Potatoes",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/potatoes.png",
+   "size": [
+    320,
+    186
+   ]
+  },
+  "bread": {
+   "ok": true,
+   "name": "Bread",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/bread.png",
+   "size": [
+    320,
+    226
+   ]
+  },
+  "brioche": {
+   "ok": true,
+   "name": "Bun",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/bun.png",
+   "size": [
+    320,
+    217
+   ]
+  },
+  "tortilla": {
+   "ok": true,
+   "name": "Corn Tortillas",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/corn_tortillas.png",
+   "size": [
+    320,
+    299
+   ]
+  },
+  "pita": {
+   "ok": true,
+   "name": "Pita Bread",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/pita_bread.png",
+   "size": [
+    320,
+    153
+   ]
+  },
+  "spaghetti": {
+   "ok": true,
+   "name": "Spaghetti",
+   "official": true,
+   "url": "https://www.themealdb.com/images/ingredients/spaghetti.png",
+   "size": [
+    219,
+    320
+   ]
+  },
+  "pizza_dough": {
+   "ok": false,
+   "tried": [
+    "Pizza Dough",
+    "Pizza Base"
+   ]
+  },
+  "pancake": {
+   "ok": false,
+   "tried": [
+    "Pancakes",
+    "Pancake Mix"
+   ]
+  }
+ },
+ "meals": {
+  "burger": {
+   "ok": true,
+   "query": "burger",
+   "meal": "kofta burgers",
+   "url": "https://www.themealdb.com/images/media/meals/lgmnff1763789847.jpg",
+   "all": [
+    "kofta burgers",
+    "Aussie Burgers",
+    "Lamb Tzatziki Burgers",
+    "15-minute chicken & halloumi burgers"
+   ]
+  },
+  "pizza": {
+   "ok": true,
+   "query": "pizza",
+   "meal": "Cassava pizza",
+   "url": "https://www.themealdb.com/images/media/meals/lrfdwz1764438393.jpg",
+   "all": [
+    "Cassava pizza",
+    "Matambre a la Pizza",
+    "Pizza Express Margherita"
+   ]
+  },
+  "hotdog": {
+   "ok": false
+  },
+  "tacos": {
+   "ok": true,
+   "query": "taco",
+   "meal": "Breadfruit Tacos",
+   "url": "https://www.themealdb.com/images/media/meals/dk70uv1784670127.jpg",
+   "all": [
+    "Breadfruit Tacos",
+    "Cajun spiced fish tacos",
+    "Crock Pot Chicken Baked Tacos"
+   ]
+  },
+  "doener": {
+   "ok": true,
+   "query": "kebab",
+   "meal": "Adana kebab",
+   "url": "https://www.themealdb.com/images/media/meals/04axct1763793018.jpg",
+   "all": [
+    "Adana kebab",
+    "Red curry chicken kebabs"
+   ]
+  },
+  "sushi": {
+   "ok": true,
+   "query": "sushi",
+   "meal": "Sushi",
+   "url": "https://www.themealdb.com/images/media/meals/g046bb1663960946.jpg",
+   "all": [
+    "Sushi"
+   ]
+  },
+  "pancakes": {
+   "ok": true,
+   "query": "pancakes",
+   "meal": "Pancakes",
+   "url": "https://www.themealdb.com/images/media/meals/rwuyqx1511383174.jpg",
+   "all": [
+    "Pancakes",
+    "Blini Pancakes",
+    "Banana Pancakes",
+    "Oatmeal pancakes",
+    "Beetroot pancakes",
+    "Dutch poffertjes (mini pancakes)",
+    "Polskie Nalesniki (Polish Pancakes)"
+   ]
+  },
+  "eis": {
+   "ok": true,
+   "query": "ice cream",
+   "meal": "Grape Nut Ice Cream",
+   "url": "https://www.themealdb.com/images/media/meals/1xscby1764790242.jpg",
+   "all": [
+    "Grape Nut Ice Cream",
+    "No-Churn Rum Raisin Ice Cream",
+    "CAFE LA LLAVE ESPRESSO ICE CREAM"
+   ]
+  },
+  "sandwich": {
+   "ok": true,
+   "query": "sandwich",
+   "meal": "Cuban Sandwich",
+   "url": "https://www.themealdb.com/images/media/meals/djdg8l1784578885.jpg",
+   "all": [
+    "Cuban Sandwich",
+    "Chivito sandwich",
+    "Lasagna Sandwiches",
+    "Chick-Fil-A Sandwich",
+    "Grilled Mac and Cheese Sandwich",
+    "Open-faced Sandwich With Potato",
+    "Falafel Pita Sandwich with Tahini Sauce",
+    "Num Pang – Cambodian Baguette Sandwich"
+   ]
+  },
+  "pasta": {
+   "ok": true,
+   "query": "spaghetti",
+   "meal": "Syrian Spaghetti",
+   "url": "https://www.themealdb.com/images/media/meals/5fu4ew1760524857.jpg",
+   "all": [
+    "Syrian Spaghetti",
+    "Spaghetti Bolognese",
+    "Spaghetti alla Carbonara",
+    "Spaghetti with Spanish flavours"
+   ]
+  }
+ }
+}
