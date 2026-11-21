@@ -16,8 +16,13 @@ import urllib.request
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CFG = json.load(open(os.path.join(ROOT, "tools", "images.json"), encoding="utf-8"))
-OUT_ING = os.path.join(ROOT, "app", "src", "main", "assets", "img", "ing")
+def _arg(flag, default):
+    return sys.argv[sys.argv.index(flag) + 1] if flag in sys.argv else default
+
+
+CFG = json.load(open(os.path.join(ROOT, _arg("--config", "tools/images.json")), encoding="utf-8"))
+OUT_ING = os.path.join(ROOT, _arg("--out", "app/src/main/assets/img/ing"))
+REPORT = os.path.join(ROOT, _arg("--report", "tools/image_report.json"))
 OUT_MEAL = os.path.join(ROOT, "app", "src", "main", "assets", "img", "meal")
 API = "https://www.themealdb.com/api/json/v1/1/"
 UA = {"User-Agent": "Mozilla/5.0 (20-dollar-game image fetcher)"}
@@ -126,7 +131,7 @@ def main():
         report["meals"][food] = hit or {"ok": False}
         print(("OK  " if hit else "MISS"), "meal", food, (hit or {}).get("meal", ""))
 
-    with open(os.path.join(ROOT, "tools", "image_report.json"), "w", encoding="utf-8") as f:
+    with open(REPORT, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=1)
     miss = [k for k, v in report["ingredients"].items() if not v.get("ok")]
     print(f"\nFehlend ({len(miss)}): {', '.join(miss)}")

@@ -3,7 +3,7 @@ name: Bilder laden
 on:
   push:
     branches: [ main ]
-    paths: [ 'tools/images.json', 'tools/fetch_images.py' ]
+    paths: [ 'tools/images.json', 'tools/alt.json', 'tools/fetch_images.py' ]
   workflow_dispatch:
 
 permissions:
@@ -19,13 +19,15 @@ jobs:
         run: pip install pillow
 
       - name: Bilder herunterladen
-        run: python3 tools/fetch_images.py
+        run: |
+          python3 tools/fetch_images.py
+          if [ -f tools/alt.json ]; then python3 tools/fetch_images.py --config tools/alt.json --out tools/alt_preview --report tools/alt_report.json; fi
 
       - name: Bilder committen
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add app/src/main/assets/img tools/image_report.json tools/mealdb_ingredients.txt
+          git add app/src/main/assets/img tools/
           git diff --cached --quiet && echo "Keine Änderungen" && exit 0
           git commit -m "Bilder von TheMealDB aktualisiert"
           git pull --rebase
