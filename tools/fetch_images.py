@@ -26,6 +26,9 @@ REPORT = os.path.join(ROOT, _arg("--report", "tools/image_report.json"))
 OUT_MEAL = os.path.join(ROOT, "app", "src", "main", "assets", "img", "meal")
 API = "https://www.themealdb.com/api/json/v1/1/"
 UA = {"User-Agent": "Mozilla/5.0 (20-dollar-game image fetcher)"}
+if "--clean" in sys.argv and os.path.isdir(OUT_ING):
+    import shutil
+    shutil.rmtree(OUT_ING)
 os.makedirs(OUT_ING, exist_ok=True)
 os.makedirs(OUT_MEAL, exist_ok=True)
 

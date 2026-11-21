@@ -1,154 +1,399 @@
 {
-  "ingredients": {
-    "patty": ["Beef Burger", "Burgers", "Minced Beef", "Beef"],
-    "cheddar": ["Cheddar Cheese", "Cheese Slices", "Cheese"],
-    "cheese": ["Cheese", "Gouda Cheese", "Emmental", "Cheddar Cheese"],
-    "lettuce": ["Lettuce", "Iceberg Lettuce", "Little Gem Lettuce"],
-    "tomato": ["Tomato", "Tomatoes", "Plum Tomatoes"],
-    "bacon": ["Bacon", "Smoked Bacon", "Streaky Bacon"],
-    "pancetta": ["Pancetta", "Lardons", "Bacon"],
-    "onion": ["Onion", "Onions", "Brown Onion"],
-    "red_onion": ["Red Onions", "Red Onion"],
-    "fried_onions": ["Fried Onions", "Crispy Fried Onions", "Shallots"],
-    "pickles": ["Gherkins", "Pickles", "Dill Pickles", "Gherkin", "Cornichons"],
-    "egg": ["Egg", "Eggs", "Free-range Eggs"],
-    "jalapeno": ["Jalapeno", "Jalapenos", "Green Chilli"],
-    "avocado": ["Avocado"],
-    "bbq": ["Barbeque Sauce", "BBQ Sauce", "Barbecue Sauce"],
-    "ketchup": ["Tomato Ketchup", "Ketchup"],
-    "mushrooms": ["Mushrooms", "Button Mushrooms", "Chestnut Mushroom"],
-    "pineapple": ["Pineapple"],
-    "peanut_butter": ["Peanut Butter"],
-    "gummy": ["Gummy Bears", "Jelly Babies", "Jelly Beans", "Haribo", "Sweets"],
-    "chocolate": ["Milk Chocolate", "Dark Chocolate", "Chocolate", "Plain Chocolate"],
-    "mayo": ["Mayonnaise", "Mayo"],
-    "garlic": ["Garlic", "Garlic Clove", "Garlic Bulb"],
-    "mozzarella": ["Mozzarella", "Mozzarella Balls", "Mozzarella Cheese"],
-    "tomato_sauce": ["Passata", "Tomato Sauce", "Tomato Puree", "Chopped Tomatoes", "Canned Tomatoes"],
-    "salami": ["Salami", "Pepperoni", "Chorizo"],
-    "ham": ["Ham", "Cooked Ham", "Parma Ham", "Prosciutto"],
-    "bell_pepper": ["Red Pepper", "Green Pepper", "Peppers", "Yellow Pepper"],
-    "olives": ["Black Olives", "Pitted Black Olives", "Green Olives", "Olives"],
-    "basil": ["Basil", "Basil Leaves", "Fresh Basil"],
-    "chili": ["Red Chilli", "Chilli", "Red Chillies", "Green Chilli"],
-    "corn": ["Sweetcorn", "Sweet Corn", "Corn"],
-    "tuna": ["Tuna", "Canned Tuna", "Tinned Tuna"],
-    "tuna_steak": ["Tuna Steak", "Tuna Steaks", "Fresh Tuna", "Tuna"],
-    "rocket": ["Rocket", "Arugula", "Watercress"],
-    "banana": ["Banana", "Bananas"],
-    "sausage": ["Sausages", "Frankfurter", "Hot Dog Sausage", "Bratwurst", "Italian Fennel Sausages"],
-    "mustard": ["Mustard", "English Mustard", "Dijon Mustard", "Yellow Mustard"],
-    "relish": ["Relish", "Pickle Relish", "Sweet Pickle Relish", "Gherkin Relish"],
-    "sauerkraut": ["Sauerkraut"],
-    "kidney_beans": ["Kidney Beans", "Red Kidney Beans", "Refried Beans"],
-    "black_beans": ["Black Beans", "Black Turtle Beans", "Kidney Beans"],
-    "cabbage": ["White Cabbage", "Cabbage", "Savoy Cabbage"],
-    "red_cabbage": ["Red Cabbage"],
-    "curry": ["Curry Powder", "Madras Paste"],
-    "popcorn": ["Popcorn", "Toffee Popcorn"],
-    "marshmallows": ["Miniature Marshmallows", "Marshmallows", "Mini Marshmallows"],
-    "jam": ["Strawberry Jam", "Raspberry Jam", "Jam"],
-    "sprinkles": ["Sprinkles", "Hundreds and Thousands", "Hundreds-and-thousands"],
-    "mince": ["Minced Beef", "Ground Beef", "Beef Mince", "Lean Minced Beef"],
-    "chicken": ["Chicken", "Chicken Breast", "Chicken Breasts", "Chicken Thighs"],
-    "salsa": ["Salsa", "Green Salsa", "Cherry Tomatoes"],
-    "sour_cream": ["Sour Cream", "Creme Fraiche"],
-    "coriander": ["Coriander", "Coriander Leaves", "Cilantro"],
-    "lime": ["Lime", "Limes"],
-    "rice": ["Rice", "Long Grain Rice", "Basmati Rice", "White Rice"],
-    "sushi_rice": ["Sushi Rice", "Rice"],
-    "fish_fingers": ["Fish Fingers", "White Fish", "Cod"],
-    "choc_chips": ["Chocolate Chips", "Dark Chocolate Chips", "Milk Chocolate Chips"],
-    "doner": ["Doner Meat", "Lamb", "Lamb Mince"],
-    "yogurt": ["Greek Yogurt", "Yogurt", "Natural Yogurt", "Full Fat Yogurt"],
-    "garlic_sauce": ["Garlic Sauce", "Greek Yogurt", "Yogurt"],
-    "mint": ["Mint", "Fresh Mint", "Parsley"],
-    "parsley": ["Parsley", "Flat Leaf Parsley", "Chopped Parsley"],
-    "hot_sauce": ["Hotsauce", "Hot Sauce", "Sriracha", "Tabasco Sauce", "Chilli Sauce"],
-    "cucumber": ["Cucumber"],
-    "feta": ["Feta", "Feta Cheese", "Cubed Feta Cheese"],
-    "fries": ["Fries", "Chips", "French Fries", "Potatoes"],
-    "green_chili": ["Green Chilli", "Green Chillies", "Jalapeno"],
-    "chocolate_spread": ["Chocolate Spread", "Nutella", "Hazelnut Spread"],
-    "salmon": ["Salmon", "Salmon Fillet", "Salmon Fillets"],
-    "smoked_salmon": ["Smoked Salmon"],
-    "prawns": ["Prawns", "King Prawns", "Raw King Prawns", "Tiger Prawns"],
-    "cream_cheese": ["Cream Cheese", "Philadelphia", "Soft Cheese"],
-    "sesame": ["Sesame Seed", "Sesame Seeds"],
-    "wasabi": ["Wasabi", "Wasabi Paste"],
-    "ginger": ["Pickled Ginger", "Ginger"],
-    "soy": ["Soy Sauce", "Dark Soy Sauce", "Light Soy Sauce"],
-    "roe": ["Fish Roe", "Salmon Roe", "Caviar"],
-    "crab": ["Crab", "Crab Meat", "Crab Sticks"],
-    "squid": ["Squid", "Calamari"],
-    "eel": ["Eel", "Smoked Eel"],
-    "mango": ["Mango"],
-    "spring_onion": ["Spring Onions", "Scallions", "Spring Onion"],
-    "nori": ["Nori", "Nori Seaweed", "Seaweed"],
-    "maple": ["Maple Syrup"],
-    "butter": ["Butter", "Salted Butter", "Unsalted Butter"],
-    "blueberries": ["Blueberries"],
-    "strawberries": ["Strawberries"],
-    "raspberries": ["Raspberries"],
-    "whipped_cream": ["Whipped Cream", "Double Cream", "Heavy Cream", "Cream"],
-    "icing_sugar": ["Icing Sugar", "Powdered Sugar"],
-    "honey": ["Honey"],
-    "cinnamon": ["Cinnamon", "Ground Cinnamon", "Cinnamon Stick"],
-    "nuts": ["Pecan Nuts", "Walnuts", "Hazelnuts", "Peanuts", "Almonds"],
-    "coconut": ["Desiccated Coconut", "Coconut", "Coconut Flakes"],
-    "kiwi": ["Kiwi", "Kiwi Fruit", "Kiwis"],
-    "ice_cream": ["Ice Cream", "Vanilla Ice Cream"],
-    "choc_sauce": ["Chocolate Sauce", "Dark Chocolate"],
-    "caramel": ["Caramel", "Caramel Sauce", "Dulce de Leche", "Toffee"],
-    "cherry": ["Cherries", "Cherry", "Glace Cherry", "Glacé Cherries"],
-    "wafer": ["Wafer", "Wafers", "Ice Cream Wafers", "Waffles"],
-    "cookie": ["Digestive Biscuits", "Cookies", "Biscuits", "Oreo"],
-    "turkey": ["Turkey", "Turkey Breast", "Turkey Mince"],
-    "pesto": ["Pesto", "Green Pesto", "Basil Pesto"],
-    "beetroot": ["Beetroot", "Beetroots"],
-    "parmesan": ["Parmesan", "Parmesan Cheese", "Parmigiano-reggiano"],
-    "cream": ["Double Cream", "Single Cream", "Cream", "Heavy Cream"],
-    "spinach": ["Spinach", "Baby Spinach"],
-    "olive_oil": ["Olive Oil", "Extra Virgin Olive Oil"],
-    "broccoli": ["Broccoli"],
-    "strawberry_yogurt": ["Strawberry Yogurt", "Yogurt", "Greek Yogurt"],
-    "custard": ["Custard"],
-    "sardines": ["Sardines"],
-    "anchovies": ["Anchovy Fillet", "Anchovies"],
-    "marmite": ["Marmite"],
-    "brussels": ["Brussels Sprouts"],
-    "liquorice": ["Liquorice"],
-    "toffee": ["Toffee", "Toffee Sauce"],
-    "mars": ["Mars Bar"],
-    "jelly": ["Jelly", "Raspberry Jelly"],
-    "pretzels": ["Pretzels"],
-    "oreo": ["Oreo", "Oreos"],
-    "lemon": ["Lemon", "Lemons"],
-    "zucchini": ["Zucchini", "Courgettes", "Courgette"],
-    "aubergine": ["Aubergine", "Eggplant"],
-    "chickpeas": ["Chickpeas"],
-    "halloumi": ["Halloumi"],
-    "carrots": ["Carrots", "Carrot"],
-    "peas": ["Peas", "Frozen Peas"],
-    "potatoes": ["Potatoes", "Floury Potatoes"],
-    "bread": ["Bread", "White Bread"],
-    "brioche": ["Brioche Bun", "Burger Buns", "Bun"],
-    "tortilla": ["Corn Tortillas", "Flour Tortilla", "Tortillas", "Hard Taco Shells"],
-    "pita": ["Pitta Bread", "Pita Bread", "Flatbread"],
-    "spaghetti": ["Spaghetti"],
-    "pizza_dough": ["Pizza Dough", "Pizza Base"],
-    "pancake": ["Pancakes", "Pancake Mix"]
-  },
-  "meals": {
-    "burger": ["burger", "hamburger"],
-    "pizza": ["pizza"],
-    "hotdog": ["hot dog", "hotdog", "frankfurter"],
-    "tacos": ["taco", "tacos"],
-    "doener": ["kebab", "doner", "shawarma", "gyro"],
-    "sushi": ["sushi"],
-    "pancakes": ["pancakes", "pancake"],
-    "eis": ["sundae", "ice cream"],
-    "sandwich": ["sandwich", "blt", "club"],
-    "pasta": ["spaghetti", "bolognese", "carbonara"]
-  }
+ "ingredients": {
+  "ground_beef": [
+   "Ground Beef"
+  ],
+  "cheddar": [
+   "Cheddar Cheese"
+  ],
+  "iceberg_lettuce": [
+   "Iceberg Lettuce"
+  ],
+  "tomato": [
+   "Tomato",
+   "Tomatoes"
+  ],
+  "bacon": [
+   "Bacon"
+  ],
+  "red_onion": [
+   "Red Onions"
+  ],
+  "pickles": [
+   "Dill Pickles",
+   "Gherkins"
+  ],
+  "jalapeno": [
+   "Jalapeno"
+  ],
+  "avocado": [
+   "Avocado"
+  ],
+  "bbq": [
+   "Barbeque Sauce",
+   "BBQ Sauce"
+  ],
+  "ketchup": [
+   "Tomato Ketchup"
+  ],
+  "mushroom": [
+   "Chestnut Mushroom"
+  ],
+  "pineapple": [
+   "Pineapple"
+  ],
+  "peanut_butter": [
+   "Peanut Butter"
+  ],
+  "mars": [
+   "Mars Bar"
+  ],
+  "oreo": [
+   "Oreo Cream Biscuits"
+  ],
+  "mayo": [
+   "Mayonnaise"
+  ],
+  "swiss_cheese": [
+   "Swiss Cheese"
+  ],
+  "mozzarella": [
+   "Mozzarella Balls"
+  ],
+  "tomato_sauce": [
+   "Passata",
+   "Tomato Sauce",
+   "Tomato Puree"
+  ],
+  "salami": [
+   "Salami",
+   "Pepperoni",
+   "Chorizo"
+  ],
+  "ham": [
+   "Ham"
+  ],
+  "peppers": [
+   "Mixed peppers"
+  ],
+  "olives": [
+   "Black Olives"
+  ],
+  "basil": [
+   "Basil"
+  ],
+  "chilli": [
+   "Chilli"
+  ],
+  "corn": [
+   "Corn On The Cob"
+  ],
+  "tuna": [
+   "Tuna"
+  ],
+  "rocket": [
+   "Rocket"
+  ],
+  "garlic": [
+   "Garlic"
+  ],
+  "egg": [
+   "Eggs",
+   "Egg"
+  ],
+  "banana": [
+   "Banana",
+   "Bananas"
+  ],
+  "marshmallows": [
+   "Miniature Marshmallows"
+  ],
+  "mustard": [
+   "Mustard",
+   "English Mustard"
+  ],
+  "chopped_onion": [
+   "Chopped Onion"
+  ],
+  "relish": [
+   "Gherkin Relish"
+  ],
+  "sauerkraut": [
+   "Sauerkraut"
+  ],
+  "liquid_cheese": [
+   "Liquid Cheese"
+  ],
+  "kidney_beans": [
+   "Kidney Beans"
+  ],
+  "cabbage": [
+   "White Cabbage",
+   "Cabbage"
+  ],
+  "cherry_tomatoes": [
+   "Cherry Tomatoes"
+  ],
+  "curry": [
+   "Curry Powder"
+  ],
+  "cucumber": [
+   "Cucumber"
+  ],
+  "popcorn": [
+   "Toffee Popcorn"
+  ],
+  "jam": [
+   "Raspberry Jam",
+   "Strawberry Jam"
+  ],
+  "choc_chips": [
+   "Chocolate Chips"
+  ],
+  "chicken": [
+   "Chicken"
+  ],
+  "salsa": [
+   "Salsa",
+   "Green Salsa"
+  ],
+  "sour_cream": [
+   "Sour Cream"
+  ],
+  "black_beans": [
+   "Black Beans"
+  ],
+  "lime": [
+   "Lime"
+  ],
+  "coriander": [
+   "Coriander",
+   "Coriander Leaves"
+  ],
+  "yellow_pepper": [
+   "Yellow Pepper"
+  ],
+  "rice": [
+   "Rice"
+  ],
+  "fish": [
+   "White Fish Fillets"
+  ],
+  "doner": [
+   "Doner Meat"
+  ],
+  "garlic_sauce": [
+   "Garlic Sauce"
+  ],
+  "parsley": [
+   "Parsley"
+  ],
+  "hot_sauce": [
+   "Hotsauce",
+   "Hot Sauce"
+  ],
+  "red_cabbage": [
+   "Red Cabbage"
+  ],
+  "onion": [
+   "Yellow Onion",
+   "Onion"
+  ],
+  "feta": [
+   "Feta"
+  ],
+  "fries": [
+   "Fries",
+   "Chips"
+  ],
+  "green_chili": [
+   "Green Chilli"
+  ],
+  "chocolate_spread": [
+   "Nutella",
+   "Chocolate Spread"
+  ],
+  "salmon": [
+   "Salmon"
+  ],
+  "tuna_steak": [
+   "Tuna Steak",
+   "Tuna"
+  ],
+  "shrimp": [
+   "Shrimp"
+  ],
+  "cream_cheese": [
+   "Cream Cheese"
+  ],
+  "sesame": [
+   "Sesame Seed"
+  ],
+  "ginger": [
+   "Ginger"
+  ],
+  "soy": [
+   "Soy Sauce"
+  ],
+  "mango": [
+   "Mango"
+  ],
+  "crab": [
+   "Crab Meay",
+   "Crab Meat"
+  ],
+  "squid": [
+   "Squid"
+  ],
+  "spring_onion": [
+   "Spring Onions"
+  ],
+  "sausage": [
+   "Polish Sausage",
+   "Sausages"
+  ],
+  "maple": [
+   "Maple Syrup"
+  ],
+  "butter": [
+   "Melted Butter",
+   "Butter"
+  ],
+  "blueberries": [
+   "Blueberries"
+  ],
+  "strawberries": [
+   "Strawberries"
+  ],
+  "whipped_cream": [
+   "Whipped Cream",
+   "Double Cream"
+  ],
+  "icing_sugar": [
+   "Icing Sugar"
+  ],
+  "honey": [
+   "Honey"
+  ],
+  "cinnamon": [
+   "Cinnamon"
+  ],
+  "walnuts": [
+   "Walnuts"
+  ],
+  "coconut": [
+   "Shredded Coconut",
+   "Desiccated Coconut"
+  ],
+  "kiwi": [
+   "Kiwi"
+  ],
+  "ice_cream": [
+   "Ice Cream"
+  ],
+  "choc_sauce": [
+   "Dark Chocolate"
+  ],
+  "caramel": [
+   "Caramel"
+  ],
+  "cherry": [
+   "Glace Cherry"
+  ],
+  "cookie": [
+   "Digestive Biscuits"
+  ],
+  "hazelnuts": [
+   "Hazlenuts"
+  ],
+  "turkey": [
+   "Turkey"
+  ],
+  "beetroot": [
+   "Beetroot"
+  ],
+  "pancetta": [
+   "Pancetta"
+  ],
+  "cream": [
+   "Double Cream",
+   "Cream"
+  ],
+  "spinach": [
+   "Spinach"
+  ],
+  "olive_oil": [
+   "Olive Oil"
+  ],
+  "broccoli": [
+   "Broccoli"
+  ],
+  "strawberry_yogurt": [
+   "Strawberry Yogurt",
+   "Yogurt"
+  ],
+  "parmesan": [
+   "Parmesan"
+  ],
+  "sesame_bun": [
+   "Sesame Seed Burger Buns"
+  ],
+  "bun": [
+   "Bun"
+  ],
+  "pita": [
+   "Pita Bread"
+  ],
+  "naan": [
+   "Naan Bread"
+  ],
+  "tortillas": [
+   "Tortillas"
+  ]
+ },
+ "meals": {
+  "burger": [
+   "burger",
+   "hamburger"
+  ],
+  "pizza": [
+   "pizza"
+  ],
+  "hotdog": [
+   "hot dog",
+   "hotdog",
+   "frankfurter"
+  ],
+  "tacos": [
+   "taco",
+   "tacos"
+  ],
+  "doener": [
+   "kebab",
+   "doner",
+   "shawarma",
+   "gyro"
+  ],
+  "sushi": [
+   "sushi"
+  ],
+  "pancakes": [
+   "pancakes",
+   "pancake"
+  ],
+  "eis": [
+   "sundae",
+   "ice cream"
+  ],
+  "sandwich": [
+   "sandwich",
+   "blt",
+   "club"
+  ],
+  "pasta": [
+   "spaghetti",
+   "bolognese",
+   "carbonara"
+  ]
+ }
 }
